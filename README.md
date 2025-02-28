@@ -30,7 +30,7 @@ ___
 * Entering Respberry Pi system
     * In terminal, turn on SPI, URAT.
     ```sudo raspi-config```
-    * Type ```sudo nano cmdline.txt``` to edit the file from the path "_/boot/firmware/cmdline.txt_" add "_spidev.bufsiz=65536_" REMINDER: 1. Add this sentence in teh same line! 2. Do not leave space on either side of the equation symbol.
+    * Type ```sudo nano cmdline.txt``` to edit the file from the path "_/boot/firmware/cmdline.txt_" add "_spidev.bufsiz=65536_" REMINDER: 1. Add this sentence in the same line! 2. Do not leave space on either side of the equation symbol!
 
 ___
 # Python Code
