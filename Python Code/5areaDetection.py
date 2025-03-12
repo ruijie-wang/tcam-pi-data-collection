@@ -1,4 +1,9 @@
 '''
+Function: 
+Manually assign w0, w1, w2, w3, w4, and h0, h1, h2, h3 
+and detect regions (w0, w1, h0, h1), (w1, w2, h0, h1), (w2, w3, h0, h1), (w3, w4, h0, h1), (w0, w4, h2, h3)
+Comparing method is using average values compare to a manually set threshold. 
+
 03032025: Update the code to use the date and time format as 'date: 11/24/2024 time: 11:43:26' instead of using hyphens('-').
 '''
 import argparse
