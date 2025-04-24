@@ -1,3 +1,4 @@
+# %%
 import argparse
 import array
 import base64
@@ -68,7 +69,7 @@ def process_tjsn_file(filepath, temp_mode):
         
         # Save image 
         output_path = os.path.join(output_folder, os.path.basename(filepath).replace('.tjsn', '.png'))
-        plt.savefig(output_path, dpi=300)
+        plt.savefig(output_path, dpi=300, bbox_inches="tight", pad_inches = 0.1)
         plt.close()
 
     if temp_mode == 'C':
@@ -89,7 +90,7 @@ def process_tjsn_file(filepath, temp_mode):
         
         # Save image 
         output_path = os.path.join(output_folder, os.path.basename(filepath).replace('.tjsn', '.png'))
-        plt.savefig(output_path, dpi=600)
+        plt.savefig(output_path, dpi=300, bbox_inches="tight", pad_inches = 0.1) # change the pad space; plt.savefig does not have quality parameter. 
         plt.close()
 
 # Scan folder
@@ -100,3 +101,5 @@ for filename in os.listdir(input_folder):
             process_tjsn_file(filepath=file_path, temp_mode=Temp_unit)
         except Exception as e:
             print(f"Error processing file {filename}: {e}")
+
+# %%
