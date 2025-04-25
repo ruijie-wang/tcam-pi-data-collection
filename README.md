@@ -4,8 +4,9 @@ ___
 # Goals
 1. [Intall system on Respberry Pi](#Install-system-on-ResPi)
 2. [Python Code](#Python-Code)
+3. [Data Management](#Data-Management)
 
-3. Tricks
+4. Tricks
     a. No hang up operation:<br>
     ```python
     Format: nohup python 'target script'
@@ -39,3 +40,20 @@ ___
     * Read tjsn file and display as image using code named [Display_tjsn/tjsn_jpg.py](./Display%20tjsn/tjsn_jpg.py) 
     Reminder: ironblack.py file is needed!
     * Add date, temperature and humidity information on images using code named [Python_Code/addtempRH.py](./Python%20Code/addtempRH.py)
+ 
+___
+# Data Management
+* Server:
+    1. Each hour, download .tjsn files to temp folder
+    2. Create tjsn zip archive, when download
+    3. move "hh\YYYYMMDD_hh.zip" file synced folder
+ 
+* Client: Each day, process all tCamFiles:
+* Go to each tCamfolder, then go to each YYMMDD\hhfolder
+* create png zip archive
+* create CSV with hearder row(“DATE”,”TIME”,”TempC”,”RH%”)
+* Then in same script:
+    1. Add each tjsn to a zip archive
+    2. Convert each tjsn to png and add to another zip archive
+    3. Add new row to .csv file, YYYYMMDD,hh:mm:ss,T,RH
+
