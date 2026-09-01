@@ -1,5 +1,5 @@
 # 11/14/24 created, it used to collect tjsn files from TCam
-
+# This file serves as a reference
 import argparse
 import array
 import base64
@@ -33,7 +33,7 @@ try:
         img = cam.get_image()
         json_data = json.dumps(img)
         timestamp = time.time()
-        readable_time = datatime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S')
+        readable_time = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S')
         file_name = f"tcam_{readable_time}.tjsn"
         with open(os.path.join(save_path, file_name), 'w') as file:
             file.write(json_data)
