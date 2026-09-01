@@ -67,7 +67,7 @@ def process_tjsn_file(filepath, temp_mode):
         # plt.show()
         
         # Save image 
-        output_path = os.path.join(output_folder, os.path.basename(filepath).replace('.tjsn', 'png'))
+        output_path = os.path.join(output_folder, os.path.basename(filepath).replace('.tjsn', '.png'))
         plt.savefig(output_path, dpi=300)
         plt.close()
 
